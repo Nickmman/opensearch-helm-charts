@@ -160,12 +160,7 @@ spec:
         configMap:
           name: {{ template "opensearch.uname" . }}-config
       {{- end }}
-      {{- $dataKeys := keys .Values.securityConfig.config.data }}
-      {{- $dataEmpty := eq (len $dataKeys) 0 }}
-      {{- $securityConfigSecretValue := default "" .Values.securityConfig.config.securityConfigSecret }}
-      {{- if and (not $dataEmpty) (ne $securityConfigSecretValue "") }}
-      {{ printf "DEBUG: .Values.securityConfig.config.data keys are: %v" $dataKeys | fail }}
-      {{ printf "DEBUG: .Values.securityConfig.config.securityConfigSecret is: %s" $securityConfigSecretValue | fail }}
+      {{- if and (and (ne (typeOf .Values.securityConfig.config.data) "map") (ne (len .Values.securityConfig.config.data) 0)) (ne .Values.securityConfig.config.securityConfigSecret "") }}
       {{ fail "Only one of .Values.securityConfig.config.data and .Values.securityConfig.config.securityConfigSecret may be defined. Please see the comment in values.yaml describing usage." }}
       {{- end }}
       {{- if .Values.securityConfig.config.data }}
