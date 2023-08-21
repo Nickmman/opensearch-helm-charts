@@ -1,14 +1,6 @@
-{{- /* Define a recursive function to handle values */ -}}
-{{- define "handleValue" -}}
-  {{- if typeIs "string" . -}}
-    {{- . | quote -}}
-  {{- else if typeIs "map[string]interface {}" . -}}
-    {{- toYaml . | nindent 4 -}}
-  {{- else if typeIs "array" . -}}
-    {{- toYaml . | nindent 4 -}}
-  {{- else -}}
-    {{- . | quote -}}
-  {{- end -}}
+{{- /* Define a recursive function to convert structured data to a plain string YAML */ -}}
+{{- define "structuredToPlainString" -}}
+  {{- printf "%v" (toYaml . | trimSuffix "\n") -}}
 {{- end -}}
 
 {{- range .Values.extraObjects }}
@@ -16,9 +8,24 @@
 {{- if typeIs "string" . -}}
 {{ tpl . $ }}
 {{- else }}
+{{- if .stringData -}}
+apiVersion: v1
+kind: Secret
+metadata:
+{{ toYaml .metadata | indent 2 }}
+stringData:
+{{- range $key, $value := .stringData }}
+  {{ $key }}: {{ include "structuredToPlainString" $value }}
+{{- end }}
+{{- else -}}
 {{- range $key, $value := . }}
 {{ $key }}: 
-  {{- include "handleValue" $value | nindent 2 -}}
+  {{- if typeIs "map[string]interface {}" $value -}}
+{{ toYaml $value | indent 2 }}
+  {{- else -}}
+{{ $value | quote }}
+  {{- end -}}
 {{- end }}
+{{- end -}}
 {{- end }}
 {{- end }}
