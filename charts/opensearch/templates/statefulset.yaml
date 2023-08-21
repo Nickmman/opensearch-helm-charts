@@ -160,7 +160,7 @@ spec:
         configMap:
           name: {{ template "opensearch.uname" . }}-config
       {{- end }}
-      {{- if and (ne (len .Values.securityConfig.config.data) 0) (ne .Values.securityConfig.config.securityConfigSecret "") }}
+      {{- if and (default {} .Values.securityConfig.config.data | toYaml | ne "{}") (default "" .Values.securityConfig.config.securityConfigSecret | ne "") }}
       {{ fail "Only one of .Values.securityConfig.config.data and .Values.securityConfig.config.securityConfigSecret may be defined. Please see the comment in values.yaml describing usage." }}
       {{- end }}
       {{- if .Values.securityConfig.config.data }}
