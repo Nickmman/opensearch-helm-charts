@@ -5,16 +5,19 @@
 
 {{- range $objKey, $objValue := .Values.extraObjects }}
 ---
-{{- if typeIs "string" $objValue }}
-{{ tpl $objValue $ }}
-{{- else if hasKey $objValue "stringData" }}
+{{- if and (eq $objValue.kind "Secret") (hasKey $objValue "stringData") }}
 apiVersion: v1
 kind: Secret
-metadata:
-{{ toYaml $objValue.metadata | indent 2 }}
+{{- range $key, $value := $objValue }}
+{{- if eq $key "stringData" }}
 stringData:
-{{- range $key, $value := $objValue.stringData }}
-  {{ $key }}: {{ include "structuredToPlainString" $value }}
+{{- range $sdKey, $sdValue := $value }}
+  {{ $sdKey }}: {{ include "structuredToPlainString" $sdValue }}
+{{- end }}
+{{- else }}
+{{ $key }}:
+{{ toYaml $value | indent 2 }}
+{{- end }}
 {{- end }}
 {{- else }}
 {{ toYaml $objValue }}
