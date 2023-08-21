@@ -3,7 +3,28 @@ entries:
   opensearch:
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9424378-03:00"
+    created: "2023-08-21T18:28:46.7735508-03:00"
+    description: A Helm chart for OpenSearch
+    digest: 830ec8b5f6de3686ceea1a4fdf128eb86294079d93d92b2381dc7400215ef807
+    home: https://opensearch.org
+    maintainers:
+    - name: DandyDeveloper
+    - name: bbarani
+    - name: gaiksaya
+    - name: peterzhuamazon
+    - name: prudhvigodithi
+    - name: TheAlgo
+    name: opensearch
+    sources:
+    - https://github.com/opensearch-project/opensearch
+    - https://github.com/opensearch-project/helm-charts
+    type: application
+    urls:
+    - https://nickmman.github.io/opensearch-helm-charts/opensearch-2.14.16.tgz
+    version: 2.14.16
+  - apiVersion: v2
+    appVersion: 2.9.0
+    created: "2023-08-21T18:28:46.771687-03:00"
     description: A Helm chart for OpenSearch
     digest: 155ae52b01fd0826610efd380a6310141efbe80508d8eee250bdc699f0876e54
     home: https://opensearch.org
@@ -24,7 +45,7 @@ entries:
     version: 2.14.15
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9323707-03:00"
+    created: "2023-08-21T18:28:46.7690464-03:00"
     description: A Helm chart for OpenSearch
     digest: ae87ba98707b2f4c7e6c04d58e649ba43029f9b888aeac8f1d406495fb12dcc9
     home: https://opensearch.org
@@ -45,7 +66,7 @@ entries:
     version: 2.14.14
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9323707-03:00"
+    created: "2023-08-21T18:28:46.7668295-03:00"
     description: A Helm chart for OpenSearch
     digest: 526a58311e0bb7d70382454227b07e47d90e4b416c90cd538b6198f7b09cf2ef
     home: https://opensearch.org
@@ -66,7 +87,7 @@ entries:
     version: 2.14.13
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9323707-03:00"
+    created: "2023-08-21T18:28:46.7645992-03:00"
     description: A Helm chart for OpenSearch
     digest: abd56bbead18884da3e3aa729e43044d6bd4cf8e57336bf398d2befc6259fc92
     home: https://opensearch.org
@@ -87,7 +108,7 @@ entries:
     version: 2.14.12
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9323707-03:00"
+    created: "2023-08-21T18:28:46.761602-03:00"
     description: A Helm chart for OpenSearch
     digest: 72435ee2a8ef8ee70f19ba3c7b0529453ae77cadd3770c158f9055f3a177bd44
     home: https://opensearch.org
@@ -108,7 +129,7 @@ entries:
     version: 2.14.11
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9266965-03:00"
+    created: "2023-08-21T18:28:46.7594216-03:00"
     description: A Helm chart for OpenSearch
     digest: b3b19f9b1b370067cc4dc7b87f81acd1c1f1f9e8cb66aa2e89afa6804d20ec56
     home: https://opensearch.org
@@ -129,7 +150,7 @@ entries:
     version: 2.14.10
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9526368-03:00"
+    created: "2023-08-21T18:28:46.7914788-03:00"
     description: A Helm chart for OpenSearch
     digest: 3ec76a6bc2d73c3bc276d0e64e554d4d768948ff3bf7f3955c51aa2cb8791740
     home: https://opensearch.org
@@ -150,7 +171,7 @@ entries:
     version: 2.14.9
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9526368-03:00"
+    created: "2023-08-21T18:28:46.7894766-03:00"
     description: A Helm chart for OpenSearch
     digest: d030909ed806fe341d06df3503bdb29b660af286ed62fac136260741a4b7180c
     home: https://opensearch.org
@@ -171,7 +192,7 @@ entries:
     version: 2.14.8
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9526368-03:00"
+    created: "2023-08-21T18:28:46.7864771-03:00"
     description: A Helm chart for OpenSearch
     digest: 86b22146cb92c8b20b2b6f2d565785b35e9bf273c8c072231b6da29fd32d7569
     home: https://opensearch.org
@@ -192,7 +213,7 @@ entries:
     version: 2.14.7
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9526368-03:00"
+    created: "2023-08-21T18:28:46.783477-03:00"
     description: A Helm chart for OpenSearch
     digest: 736c743a74c406214af5a4fbbd67b5ca4d778a4eb10f13e95a403b2a4dca35d5
     home: https://opensearch.org
@@ -213,7 +234,7 @@ entries:
     version: 2.14.6
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9489919-03:00"
+    created: "2023-08-21T18:28:46.7814762-03:00"
     description: A Helm chart for OpenSearch
     digest: d3ca4575d61767ed0076ce95afe74f4bfb795454eafb1523a50722eb1e1f8131
     home: https://opensearch.org
@@ -234,7 +255,7 @@ entries:
     version: 2.14.5
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9424378-03:00"
+    created: "2023-08-21T18:28:46.7804763-03:00"
     description: A Helm chart for OpenSearch
     digest: 25d6863d6af94fd94680ac923beb601c04e3b545c9125518e9cc6c67ed05d2a6
     home: https://opensearch.org
@@ -255,7 +276,7 @@ entries:
     version: 2.14.4
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9424378-03:00"
+    created: "2023-08-21T18:28:46.7779646-03:00"
     description: A Helm chart for OpenSearch
     digest: fe71f023b86ae9dc6703acbb4c7f5e5a3fd700e2045da74668e017538cca5a45
     home: https://opensearch.org
@@ -276,7 +297,7 @@ entries:
     version: 2.14.3
   - apiVersion: v2
     appVersion: 2.9.0
-    created: "2023-08-21T18:23:04.9424378-03:00"
+    created: "2023-08-21T18:28:46.7764522-03:00"
     description: A Helm chart for OpenSearch
     digest: 963aa470d5223f6ab5570f295891bef8ade0c3aae3f639b47c79882f72b4d1fe
     home: https://opensearch.org
@@ -295,4 +316,4 @@ entries:
     urls:
     - https://nickmman.github.io/opensearch-helm-charts/opensearch-2.14.2.tgz
     version: 2.14.2
-generated: "2023-08-21T18:23:04.9266965-03:00"
+generated: "2023-08-21T18:28:46.7566559-03:00"
