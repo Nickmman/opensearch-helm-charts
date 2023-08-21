@@ -3,29 +3,20 @@
   {{- printf "%v" (toYaml . | trimSuffix "\n") -}}
 {{- end -}}
 
-{{- range .Values.extraObjects }}
+{{- range $objKey, $objValue := .Values.extraObjects }}
 ---
-{{- if typeIs "string" . -}}
-{{ tpl . $ }}
-{{- else }}
-{{- if .stringData -}}
+{{- if typeIs "string" $objValue }}
+{{ tpl $objValue $ }}
+{{- else if hasKey $objValue "stringData" }}
 apiVersion: v1
 kind: Secret
 metadata:
-{{ toYaml .metadata | indent 2 }}
+{{ toYaml $objValue.metadata | indent 2 }}
 stringData:
-{{- range $key, $value := .stringData }}
+{{- range $key, $value := $objValue.stringData }}
   {{ $key }}: {{ include "structuredToPlainString" $value }}
 {{- end }}
-{{- else -}}
-{{- range $key, $value := . }}
-{{ $key }}: 
-  {{- if typeIs "map[string]interface {}" $value -}}
-{{ toYaml $value | indent 2 }}
-  {{- else -}}
-{{ $value | quote }}
-  {{- end -}}
-{{- end }}
-{{- end -}}
+{{- else }}
+{{ toYaml $objValue }}
 {{- end }}
 {{- end }}
