@@ -20,6 +20,6 @@ stringData:
 {{- end }}
 {{- end }}
 {{- else }}
-{{ toYaml $objValue }}
+{{ toYaml $objValue | nindent 0 }}
 {{- end }}
 {{- end }}
